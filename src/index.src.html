@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="ant">
+<head>
+  <meta charset="utf-8">
+  <title>Add'n'Travel</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+  <!--[if lte IE 8]>
+    <script>
+      // @todo: add all the custom elements
+      document.createElement('ng-include');
+      document.createElement('ng-pluralize');
+      document.createElement('ng-view');
+
+      document.createElement('course-category-tabs');
+      document.createElement('course-multiselect-table');
+      document.createElement('object-course-internal');
+      document.createElement('object-course-external');
+    </script>
+  <![endif]-->
+</head>
+<body ng-controller="AntController">
+  <!--[if lt IE 8]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div growl></div>
+
+
+<!--SCRIPTS-->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.0.0/angular-strap.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.0.0/angular-strap.tpl.min.js'></script>
+  <script src='javascript/libs/angular-growl.min.js'></script>
+  <script src='javascript/app.min.js'></script>
+<!--SCRIPTS END-->
+
+  <scss-grid>
+</body>
+</html>

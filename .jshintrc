@@ -1,0 +1,35 @@
+{
+  "curly": true,
+  "eqnull": true,
+  "eqeqeq": true,
+  "undef": true,
+  "quotmark": "single",
+  "globals": {
+    "jQuery": true,
+    "window": true,
+    "process": false,
+    "mocks": true
+  },
+  "predef": [
+    "_",
+    "angular",
+    "require",
+    "inject",
+    "module",
+    "chai",
+    "sinon",
+    "expect",
+    "describe",
+    "xdescribe",
+    "it",
+    "xit",
+    "beforeEach",
+    "afterEach",
+    "element",
+    "select",
+    "input",
+    "loginIfNeeded",
+    "sleep",
+    "browser"
+  ]
+}
