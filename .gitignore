@@ -1,0 +1,9 @@
+.idea
+bower_components/
+node_modules/
+build/target/
+src/javascript/libs/
+src/css/main.css
+src/index.html
+src/javascript/app/templates.js
+src/javascript/app/mocks.js
