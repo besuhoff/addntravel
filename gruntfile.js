@@ -39,6 +39,7 @@ module.exports = function(grunt) {
       source: {
         options: {
           server: 'server.js',
+          port: Number(process.env.PORT || 3000),
           livereload: true
         }
       },
