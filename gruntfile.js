@@ -9,9 +9,9 @@ module.exports = function(grunt) {
     libs = {
       'jquery': { path: 'jquery/dist/', src: 'jquery.js', min: 'jquery.min.js', cdn: googleCdn + 'jquery/1.11.1/jquery.min.js'},
       'angular': { path: 'angular/', src: 'angular.js', min: 'angular.min.js', cdn: googleCdn + 'angular/angular.min.js'},
-      'angular-strap': { path: 'angular-strap/dist/', src: 'angular-strap.js', min: 'angular-strap.min.js', cdn: cloudflareCdn + 'angular-strap/2.0.0/angular-strap.min.js'},
-      'angular-strap.tpl': { path: 'angular-strap/dist/', src: 'angular-strap.tpl.js', min: 'angular-strap.tpl.min.js', cdn: cloudflareCdn + 'angular-strap/2.0.0/angular-strap.tpl.min.js'},
-      'angular-growl-2': { path: 'angular-growl-2/build/', src: 'angular-growl.js', min: 'angular-growl.min.js', cdn: '' }
+      'angular-growl-2': { path: 'angular-growl-2/build/', src: 'angular-growl.js', min: 'angular-growl.min.js', cdn: '' },
+      'ngAutocomplete': { path: 'ngAutocomplete/src/', src: 'ngAutocomplete.js', min: '', cdn: '' },
+      'boostrap': { path: 'bootstrap/dist/js/', src: 'bootstrap.js', min: 'bootstrap.min.js', cdn: ''}
     },
     copyFiles = [],
     linkerFiles = [],
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
   }
 
   copyFiles.push({src: sourcePath + 'index.src.html', dest: sourcePath + 'index.html'});
-  copyFiles.push({src: bowerPath + 'ng-wig/dist/css/ng-wig.css', dest: sourcePath + 'css/ng-wig.css'});
+  copyFiles.push({src: bowerPath + 'bootstrap/dist/css/bootstrap.min.css', dest: sourcePath + 'css/bootstrap.min.css'});
 
   linkerFiles.push(sourcePath + 'javascript/app/**/*.js');
   linkerFiles.push('!' + sourcePath + 'javascript/app/admin/config.stag.js');
@@ -39,8 +39,8 @@ module.exports = function(grunt) {
       source: {
         options: {
           server: 'server.js',
-          port: Number(process.env.PORT || 3000),
-          livereload: true
+          port: Number(process.env.PORT || 3000) //,
+         // livereload: true
         }
       },
       dist: {
@@ -79,7 +79,6 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             { match: /\/css\/main\.css/, replacement: 'css/main.min.css'},
-            { match: /\/css\/ng\-wig\.css/, replacement: 'css/ng-wig.min.css'}
           ]
         },
         files: [
@@ -94,7 +93,7 @@ module.exports = function(grunt) {
     },
     html2js: {
       options: {
-        base: 'public/javascript/app/',
+        base: 'src/javascript/app/',
         module: 'app-templates'
       },
       templates: {
@@ -113,18 +112,18 @@ module.exports = function(grunt) {
     },
     watch: {
       index: {
-        files: ['public/index.src.html'],
+        files: ['src/index.src.html'],
         tasks: ['copy:index', 'jslinker:dev']
       },
       templates: {
-        files: ['public/javascript/app/**/views/**/*.html'],
+        files: ['src/javascript/app/**/views/**/*.html'],
         tasks: ['html2js']
       },
       js: {
-        files: ['public/javascript/app/**/*.js', targetPath + 'javascript/app/templates.js', targetPath + 'javascript/app/mocks.js'],
+        files: ['src/javascript/app/**/*.js', targetPath + 'javascript/app/templates.js', targetPath + 'javascript/app/mocks.js'],
         tasks: ['ngAnnotate'],
         options: {
-          livereload: true
+          // livereload: true
         }
       },
       json: {
@@ -146,9 +145,9 @@ module.exports = function(grunt) {
     },
     jshint: {
       all: {
-        src: ['public/javascript/app/**/*.js',
-          '!public/javascript/app/templates.js',
-          '!public/javascript/app/mocks.js'],
+        src: ['src/javascript/app/**/*.js',
+          '!src/javascript/app/templates.js',
+          '!src/javascript/app/mocks.js'],
         options: {
           jshintrc: true
         }
@@ -165,7 +164,6 @@ module.exports = function(grunt) {
       prod: {
         files: {
           'build/target/css/main.min.css': [sourcePath + 'css/main.css'],
-          'build/target/css/ng-wig.min.css': [sourcePath + 'css/ng-wig.css']
         }
       }
     }

@@ -1,0 +1,14 @@
+<div class="gallery">
+    <div class="previews">
+        <div class="image preview"
+             style="background-image: url({{image.url}})"
+             ng-click="setLargeImage(image)"
+             ng-repeat="image in photos" ng-class="{active: image === large}">
+
+             </div>
+    </div>
+    <div class="large-container" ng-click="next()">
+        <img class="image large" ng-src="{{large.url}}"/>
+        <div class="attributions" ng-bind-html="htmlAttributions" ng-show="htmlAttributions"></div>
+    </div>
+</div>

@@ -5,6 +5,8 @@
   <title>Add'n'Travel</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif+Caption&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
   <!--[if lte IE 8]>
@@ -26,21 +28,67 @@
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div growl></div>
-  
-  <h1>Hi! This line will just show that AngularJS is working correctly {{ 1 + 2 }} (or not)</h1>
-  <img src="images/mock.png">
+  <div class="container" ng-controller="PlacesController as places">
+    <div growl></div>
+    <div id="logo"></div>
+    <p>Add sights to your personal database and get notifications of the most suitable tours for the day</p>
+    <div class="row">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-6">
+        <div id="search">
+          <input auto-focus
+                 type="search"
+                 class="form-control"
+                 placeholder="Type in an object or location"
+                 ng-model="places.result"
+                 ng-autocomplete
+                 details="details" /></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">
+      </div>
+      <div class="col-xs-5">
+        <span class="hint">E.g., <a ng-click="setValue($event)">Statue of Liberty, New York</a></span>
+      </div>
+    </div>
+    <div id="form_add" ng-show="details">
+      <div class="row">
+        <div class="col-md-4">
+          <div>
+            <h3>Map of the location</h3>
+            <map details="details"></map>
+          </div>
+        </div>
+        <div class="col-md-8" ng-show="photos.length">
+          <h3>Related photos</h3>
+          <gallery photos="photos"></gallery>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-5 button-holder text-right">
+          <button class="button">Add Sight</button> <em>or <a>return</a> to Sight List</em>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
 
 
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places,maps&key=AIzaSyCzZ3pqGWZAAPle7jgpgBzVJLSDwn-MllA"></script>
 <!--SCRIPTS-->
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.0.0/angular-strap.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular-strap/2.0.0/angular-strap.tpl.min.js'></script>
   <script src='javascript/libs/angular-growl.min.js'></script>
+  <script src='javascript/libs/ngAutocomplete.js'></script>
   <script src='javascript/app.min.js'></script>
 <!--SCRIPTS END-->
 
-  <scss-grid>
 </body>
 </html>

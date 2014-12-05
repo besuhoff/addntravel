@@ -8,5 +8,13 @@
     growlProvider.globalTimeToLive(3000);
   });
 
+  app.constant('settings', {
+    google: {
+      photos: {
+        height: 1024
+      }
+    }
+  });
+
   window.app = app;
 })(window);
