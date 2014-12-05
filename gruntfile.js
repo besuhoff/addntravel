@@ -10,8 +10,7 @@ module.exports = function(grunt) {
       'jquery': { path: 'jquery/dist/', src: 'jquery.js', min: 'jquery.min.js', cdn: googleCdn + 'jquery/1.11.1/jquery.min.js'},
       'angular': { path: 'angular/', src: 'angular.js', min: 'angular.min.js', cdn: googleCdn + 'angular/angular.min.js'},
       'angular-growl-2': { path: 'angular-growl-2/build/', src: 'angular-growl.js', min: 'angular-growl.min.js', cdn: '' },
-      'ngAutocomplete': { path: 'ngAutocomplete/src/', src: 'ngAutocomplete.js', min: '', cdn: '' },
-      'boostrap': { path: 'bootstrap/dist/js/', src: 'bootstrap.js', min: 'bootstrap.min.js', cdn: ''}
+      'ngAutocomplete': { path: 'ngAutocomplete/src/', src: 'ngAutocomplete.js', min: '', cdn: '' }
     },
     copyFiles = [],
     linkerFiles = [],
@@ -27,7 +26,7 @@ module.exports = function(grunt) {
   }
 
   copyFiles.push({src: sourcePath + 'index.src.html', dest: sourcePath + 'index.html'});
-  copyFiles.push({src: bowerPath + 'bootstrap/dist/css/bootstrap.min.css', dest: sourcePath + 'css/bootstrap.min.css'});
+  copyFiles.push({src: bowerPath + 'bootstrap-css-only/css/bootstrap.min.css', dest: sourcePath + 'css/bootstrap.min.css'});
 
   linkerFiles.push(sourcePath + 'javascript/app/**/*.js');
   linkerFiles.push('!' + sourcePath + 'javascript/app/admin/config.stag.js');
@@ -39,8 +38,8 @@ module.exports = function(grunt) {
       source: {
         options: {
           server: 'server.js',
-          port: Number(process.env.PORT || 3000) //,
-         // livereload: true
+          port: Number(process.env.PORT || 3000),
+          livereload: true
         }
       },
       dist: {
@@ -123,7 +122,7 @@ module.exports = function(grunt) {
         files: ['src/javascript/app/**/*.js', targetPath + 'javascript/app/templates.js', targetPath + 'javascript/app/mocks.js'],
         tasks: ['ngAnnotate'],
         options: {
-          // livereload: true
+          livereload: true
         }
       },
       json: {
