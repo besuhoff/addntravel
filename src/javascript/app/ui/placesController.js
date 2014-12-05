@@ -1,5 +1,5 @@
 angular.module('ui')
-  .controller('PlacesController', ['$scope', 'settings', function($scope, settings) {
+  .controller('PlacesController', function($scope, settings) {
     'use strict';
     $scope.photos = [];
     $scope.examples = ["Statue of Liberty, New-York", "Big Ben, London"];
@@ -22,4 +22,4 @@ angular.module('ui')
     $scope.setSearchTerm = function(term) {
       $scope.searchTerm = term;
     }
-  }]);
+  });

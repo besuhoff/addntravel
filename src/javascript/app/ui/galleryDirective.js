@@ -1,5 +1,5 @@
 angular.module('ui')
-  .directive('gallery', ['$sce', function($sce){
+  .directive('gallery', function($sce){
     'use strict';
 
     return {
@@ -30,4 +30,4 @@ angular.module('ui')
         })
       }
     };
-  }]);
+  });
