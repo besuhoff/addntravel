@@ -33,16 +33,19 @@
     <div id="logo"></div>
     <p>Add sights to your personal database and get notifications of the most suitable tours for the day</p>
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-sm-3">
       </div>
-      <div class="col-xs-6">
+      <div class="col-sm-5">
         <search term="searchTerm" details="details"></search>
+      </div>
+      <div class="col-sm-4 button-holder">
+        <button class="button">Add Sight</button>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-3">
+      <div class="col-sm-3">
       </div>
-      <div class="col-xs-6">
+      <div class="col-sm-9">
         <span class="hint">E.g., <span class="examples">
             <span class="example"  ng-repeat = "example in examples"><a ng-click="setSearchTerm(example)">{{example}}</a></span>
           </span>
@@ -51,28 +54,29 @@
     </div>
     <div id="form_add" ng-show="details">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-12">
+          <div class="wiki">
+            <h1>Norway</h1>
+            <span>Norway, officially the Kingdom of Norway, is a Scandinavian unitary constitutional monarchy whose territory comprises
+          the western portion of the Scandinavian Peninsula, Jan Mayen and the Arctic archipelago of Svalbard.</span>
+            <span><a href="http://en.wikipedia.org/wiki/Norway">Wikipedia</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
           <div>
             <h3>Map of the location</h3>
             <map details="details"></map>
           </div>
         </div>
-        <div class="col-md-8" ng-show="photos.length">
+        <div class="col-sm-8" ng-show="photos.length">
           <h3>Related photos</h3>
           <gallery photos="photos"></gallery>
         </div>
 
       </div>
-
-      <div class="row">
-        <div class="col-xs-3">
-        </div>
-        <div class="col-xs-5 button-holder text-right">
-          <button class="button">Add Sight</button> <em>or <a>return</a> to Sight List</em>
-        </div>
       </div>
-      </div>
-    </div>
 
   </div>
 
