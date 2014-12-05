@@ -43,11 +43,23 @@ a {
     padding: 1em 14px;
 }
 
-.hint a {
+.hint .example a {
     text-decoration: none;
     border-bottom: 1px dashed;
     height: 19px;
     display: inline-block;
+}
+
+.hint .example:before {
+    content: ', ';
+}
+
+.hint .example:last-child:before {
+    content: ', or ';
+}
+
+.hint .example:first-child:before {
+    content: '';
 }
 
 .map-container {

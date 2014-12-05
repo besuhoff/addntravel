@@ -2,7 +2,7 @@ angular.module('ui')
   .controller('PlacesController', ['$scope', 'settings', function($scope, settings) {
     'use strict';
     $scope.photos = [];
-    $scope.places = {};
+    $scope.examples = ["Statue of Liberty, New-York", "Big Ben, London"];
 
     $scope.$watch('details', function(details) {
       if (details !== undefined) {
@@ -17,11 +17,9 @@ angular.module('ui')
         }
         $scope.photos = photos;
       }
-    })
+    });
 
-    $scope.setValue = function($event) {
-      var search = angular.element('#search [type="search"]')[0];
-      google.maps.event.trigger(search, 'focus', {});
-      $scope.places.result = $event.target.text;
+    $scope.setSearchTerm = function(term) {
+      $scope.searchTerm = term;
     }
   }]);
