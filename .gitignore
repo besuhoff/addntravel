@@ -5,4 +5,3 @@ build/target/
 src/javascript/libs/
 src/index.html
 src/javascript/app/templates.js
-src/javascript/app/mocks.js
