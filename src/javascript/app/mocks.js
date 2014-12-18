@@ -13,7 +13,7 @@ mocks["records"] = [
     "createdAt": "2014-12-18T01:15:56+02:00",
     "updatedAt": "2014-12-18T01:35:15+02:00",
     "id": 2,
-    "title": "Statue of Liberty National Monument",
+    "name": "Statue of Liberty National Monument",
     "googleId": "1sClROAAAALkO8g_kkW7eaBQqmcsyRBi5MPmBa2tnMmIqC01Qsbgo2f1Ov6NR-T7lC6Btut4sp2GqNjkbL9wPHJJR5Y_7XiM4pj_shPhk3YMKy7nqPAssSEIJzd3VHM_HWN_XSef7ykX4aFGD6_2tID1YswTtgG7bgLLAof-mw",
     "tags": [{id: 1}, {id: 3, value: 1}, {id: 5, value: 2017}]
   }
