@@ -38,8 +38,8 @@ module.exports = function(grunt) {
       source: {
         options: {
           server: 'server.js',
-          port: Number(process.env.PORT || 3000),
-          livereload: true
+          port: Number(process.env.PORT || 3000)//,
+//          livereload: true
         }
       },
       dist: {
@@ -122,7 +122,7 @@ module.exports = function(grunt) {
         files: ['src/javascript/app/**/*.js', targetPath + 'javascript/app/templates.js', targetPath + 'javascript/app/mocks.js'],
         tasks: ['ngAnnotate'],
         options: {
-          livereload: true
+//          livereload: true
         }
       },
       json: {
